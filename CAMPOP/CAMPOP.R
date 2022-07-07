@@ -3,38 +3,49 @@ library(sos)
 library(ggplot2)
 library(tidyverse)
 
-# Cargo los datos
+# Cargo los datos ----
 
 setwd("C:\\Users\\Diego\\Desktop\\Estadistica (NACHO)\\Grupo de investigacion Actuarial-Demografico\\PAIE\\CAMPOP")
 CAMPOP <- read.delim("26ParishesReconstitutions_ALL_DATA.txt", sep = "\t", header = TRUE)
 names(CAMPOP)
 
 
-# datos relevantes 
+# Datos relevantes ---- 
 
 df <- CAMPOP[,c("marriages_parfrf", "wives_BirthDate", "children_ChildNumber", "children_BirthDate")]
 names(df)
+
+df %>% count(wives_BirthDate=="") # saca de la base de datos las fecha de nacimiento de las mujeres vacias
 df <- df[!(df$wives_BirthDate==""),]
+
+df %>% count(children_BirthDate=="") # Saca las fecha de nacimiento que estan vacias
 df <- df[!(df$children_BirthDate==""),]
+
 df$wives_BirthDate <- as.numeric(str_sub(df$wives_BirthDate, -4, -1)) # se queda solo con el año de nacimiento de las mujeres
 df$children_BirthDate <- as.numeric(str_sub(df$children_BirthDate, -4, -1)) # se queda solo con el año de nacimiento de los hijos
 
-table(df$children_ChildNumber, useNA = "ifany") # 0 NA
+table(df$children_ChildNumber, useNA = "ifany") # 0 NA, indica la cantidad de mujeres que tuvieron tantos hijos
 df %>% count(children_ChildNumber)
 
-# Frecuencia de entradas para cada registro de matrimonio
-Freqs <- as.data.frame(table(df$marriages_parfrf)) # indica la cantidad de hijos por mujer
+# Frecuencia de entradas para cada registro de matrimonio ----
+
+Freqs <- as.data.frame(table(df$marriages_parfrf))# indica la cantidad de hijos por mujer
+df %>% count(marriages_parfrf)
+
 colnames(Freqs) <- c(colnames(df)[1], "lb_total")
 df <- merge(df, Freqs, by="marriages_parfrf", all=T)
 
-# edad de la madre al nacimiento
+# lb_total: indica la cantidad de veces que figura en ID de las mujeres
 
-df$m_ageb <- paste0((df$children_BirthDate-df$wives_BirthDate),"_",df$nrc) # mothers age at birth
+# Edad de la madre al nacimiento ----
+
+df$m_ageb <- paste0((df$children_BirthDate-df$wives_BirthDate),"_",df$nrc) # edad de la madre en los nacimiento de sus hijos
 
 colnames(df) <- c("ID", "m_yob", "nrc", "c_yob", "lb_total", "m_ageb")
-# ID, mother's year of birth, nr of child (order), child's year of birth, live births total, age of mother at birth of child
+# DNI, año de nacimiento de la madre, nº de hijo (pedido), año de nacimiento del hijo, 
+# total de nacidos vivos, edad de la madre al nacimiento del hijo
 
-# list with cohort dfs
+# lista con cohorte dfs
 lc <- list()
 asfr_list <-  list() # esto es la tasa de fecundidad por edad por cohorte?
 TFR_list <- list() # esto es la tasa global de fecundidad por cohorte?
@@ -109,3 +120,10 @@ ggplot(asfr_list[[1]], aes(x=m_agebi, y=fx)) + geom_point() + ggtitle(unique(asf
 #cohorte 1666
 ggplot(asfr_list[[223]], aes(x=m_agebi, y=fx)) + geom_point() + ggtitle(unique(asfr_list[[223]]$cohort))  
 asfr_list[[223]]
+
+
+
+
+
+df$fecha <- as.Date(df$wives_BirthDate, "%d%m%Y")
+any
