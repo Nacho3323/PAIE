@@ -1,0 +1,559 @@
+                               Hutterite Data
+
+Deck No.                Title of Card.
+00                      Family card
+01-25                   Live birth card, by order.
+4x                      Pregnancy card for the xth marriage for this woman
+50, 51 Card A, B        Live birth and exposure to risk for 1st marriage, by
+                            year of age.
+61, 62 Card C           Intervals between successive live births.
+60 Card D               Open interval.
+                                                                       7/15/63
+                                Code Summary
+                                 Family Card
+
+Column No.              Item
+1-2                     Deck number
+3-7                     Family number
+8-14                    Father's birth date.
+15-21                   Mother's birth date.
+22-28                   Date of marriage.
+29                      Reasons for end of marriage record.
+30-36                   Date of end of marriage record.
+37-43                   Date of survey.
+44-45                   Total number of LB confinements.
+46                      Pregnancy at the time of survey.
+47                      Number of times multiple births.
+48-49                   Total number of live births.
+50                      Marital status at marriage.
+51                      Other marriages.
+52-58                   Date of last birth.
+59-61                   Year of last pregnancy if not live birth.
+62-68                   Date of father's death.
+69-75                   Date of mother's death.
+       (See detailed code)
+
+                                Code Summary
+                             Card for Live Birth
+
+Column No.              Item
+1-2                     Rank order of confinement (LB).
+3-45                    Copy from family card.
+46-52                   Date of birth.
+53-59                   Date of death.
+60                      Sex and multiplicity.
+61-62                   Rank order of pregnancy from beginning counting all
+                         pregnancies.
+63                      Rank order from end.
+64                      Number of miscarriages and stillbirths between this
+                         birth and last preceding LB.
+65-71                   Same information as in columns 45-51 above for
+                        preceding LB.
+72                      Information about mortality of previous child.
+73                      Special column for problem cases.
+       (See Detailed Code)
+                                                                       7/15/63
+
+                                Detailed Code
+
+                       Pregnancy Record Card for Women
+             With Record of all Pregnancies up to Date of Survey
+
+Column No.              Item
+1                       Deck number (4)
+2                       Order of this marriage for the woman.
+3-36                    Duplicate from family card.
+37                      Number of marriages for woman.
+38-44                   Total number of pregnancies (counting pregnancy at
+                         time of survey, if known.  If exact order of
+                         miscarriages or stillbirths is unknown all of the
+                         following columns are to be left blank.
+47                      Outcome of 1st pregnancy*
+48                      Outcome of 2nd pregnancy*
+                         Blank if 0 in column 47
+49-70                   Outcome of 3rd-25th pregnancy*
+71-72                   Total number of LB confinements (count twins as one).
+
+
+*Outcome Code
+0 Order of pregnancies unknown
+1 Single LB
+2 Multiple LB (both live)
+3 Single SB
+4 Multiple SB (both dead)
+5 One LB one SB
+6 Miscarriage
+7 Pregnancy not terminated on last report
+8 Triplets (all live)
+9 Miscarriage (twins)
+                                                                       7/15/63
+
+                                Detailed Code
+
+                                 Family Card
+
+Column No.              Item                                                                                                     Code
+1-2                     Deck number. '00'
+3-7                     Colony and family number. Direct.
+8                       Completeness of information about father's birth date
+                           1 Day, month, year known
+                           2 Month, year known (not day)
+                           3 Year known (not month)
+                           4 Approximate year known.
+                           5 Unknown
+                           6 Conflict in dates on two records.
+9-14                    Father's birth date
+                           When different dates appear on two records, the date
+                            on the family record where he is a child used.
+      Detailed code:
+    9-11                Father's birth year Last 3 digits of year.  If unknown
+                         (5 in column 8) 000.
+    12-14               Father's birth day and month. See special date code.
+                         If day and month unknown, (3, 4 or 5in column 8) code
+                         000. If month known but not day, (2 in column 8)
+                         mid-day of month (see special date code).
+
+15                      Completeness of mother's birth date.			As column 8.
+16-21                   Mother's birth date.  As columns 9-14.
+22                      Completeness of date of marriage.  As column 8.
+23-28                   Date of marriage.  As columns 9-14.
+29                      Reasons for end of marriage record.
+                          1 Complete family (married life recorded until mother
+                            > 50 years).  For columns 30-36 if either spouse
+                            dead, code date of death; if both dead code date of
+                            earlier death.  If both alive, code date of survey.
+                          2 Death of father, before mother aged 50 years.  For
+                            columns 30-36, code 9 months after father's death.
+                          3 Death of mother before aged 50.  For columns 30-36
+                            code date.
+                          4 Date of survey, before mother aged 50.  For columns
+                            30-36 code date.
+                          5 Exact age of mother unknown but probably complete.
+                            If either spouse died, code earliest date of death
+                            in columns 30-36.  If both alive, code date of
+                            survey.
+                          6 End of marriage unknown.
+30                      Completeness of date in 31-36,
+                          1 Day, month, year known.
+                          2 Month, year known (not day).
+                          3 Year known.
+                          4 Approximate year known.
+                          5 Unknown.
+31-36                      Date of end of marriage record. As columns 9-14
+                          (see code for #29).
+37                      Completeness of date of survey.  As column 30.
+38-43                   Date of survey.  As columns 9-14.
+44-45                   Total number of confinements (LB)
+                         Direct (Twins count as one)
+                                                                       7/15/63
+
+                                   Detailed Code
+
+                                    Family Card
+
+Column No.              Item                                                                                                     Code
+46                      Pregnancy at the time of survey
+                          0 If none mentioned and do not fit item 2 below.
+                          1 If pregnancy mentioned.
+                          2 If not applicable (mother dead, widowed or over 50)
+                            i.e. cannot be pregnant.
+47                      Number of time multiple births. Direct (i.e. number of
+                         times twins or triplets).
+48-49                   Total number of live births. Direct (counting number of
+                          children--i.e. twins count as two).
+50                      Marital status at marriage.
+                          Father    Mother
+                          1  S        S
+                          2  W        S
+                          3  S        W
+                          4  W        W
+51                      Other marriages.
+                          0 Neither (1 in column 50)
+                          1 Father only (2 in column 50)
+                          2 Mother 0 pregnancy (3 in column 50)
+                          3 Mother 0 LB but pregnancy (3 in column 50)
+                          4 Mother 1 or more LB (3 in column 50)
+                          5 Both parents 0 LB either (4 in column 50)
+                          6 Both parents > 1 LB (4 in column 50).
+                          7 Both parents 0 LB mother (4 in column 50)
+                          8 Both parents 0 LB father (4 in column 50)
+52                      Completeness of date of last birth.
+                          1 Day, month, year known.
+                          2 Month, year known (not day)
+                          3 Year known (not month).
+                          4 Approximate year known.
+                          5 Unknown.
+                          6 Conflict in dates.
+                          7 Impossible interval but assumption made to arrive
+                            at date (year changed or month and day reversed).
+                          8 Impossible interval coded unknown (approximate year
+                            given but month and day coded as 000).
+53-58                   Date of last live birth. As columns 9-14.
+59-61                   Year of last pregnancy if not LB.
+                          Direct--include a miscarriage or a pregnancy at time
+                          of survey (If LB or no pregnancies code 000, if year
+                           unknown, code 999, if no pregnancy record, code 111)
+62                      Completeness of date of father's death.
+                           0 Alive at last record.
+                           1 Day, month, year known.
+                           2 Month, year known.
+                           3 Year known.
+                           4 Approximate year known.
+                           5 Known dead but year unknown.
+                           6 Unknown whether alive or dead.
+63-68                   Date of father's death.  As columns 9-14.  If living on
+                           the date of survey (i.e. if punch '0' in column 62)
+                           punch zeros in these columns.
+                                                                       7/15/63
+
+                                   Detailed Code
+
+                                    Family Card
+
+Column No.              Item
+69                      Completeness of date of mother's death. As column 62.
+70-75                   Date of mother's death.  As columns 63-68.
+                                                                       7/15/63
+
+                                   Detailed Code
+
+                                Card for Live Birth
+
+Column No.              Item                                                                                                     Code
+1-2                     Deck number. Direct rank order of confinement among
+                          live births -in that marriage.  Twins are to have a
+                          card for each child, but they will have the identical
+                          rank order.  For the family as a whole, this counts
+                          as one confinement, but as 2 LB.
+3-45                    Duplicate from family card.
+46                      Completeness of date of this birth.
+                          1 Day, month, year known.
+                          2 Month, year known (not day).
+                          3 Year known (not month).
+                          4 approximate year known.
+                          5 Unknown.
+                          6 conflict in dates.
+                          7 Impossible interval but assumption made to arrive
+                            at date (year changed or month and day reversed).
+                          8 Impossible interval coded unknown (approximate year
+                            given but month and day coded as 000).
+47-52                   Date of birth. As other dates.
+53                      Completeness of date of death.
+                          0 Alive at last record.
+                          1 Day month, year known.
+                          2 Month, year known.
+                          3 Year known.
+                          4 Approximate year known.
+                          5 Known dead but year unknown.
+                          6 Unknown whether alive or dead.
+
+54-59                   Date of death.  As other dates.
+60                      Sex and multiplicity.
+                          1 Male, single birth.
+                          2 Female, single birth.
+                          3 Male, identical twin.
+                          4 Female, identical twin.
+                          5 Male, fraternal twin.
+                          6 Female, fraternal twin.
+                          7 Male twin, zygosity unknown.
+                          8 Female twin, zygosity unknown.
+                          9 Sex unknown, single.
+                          0 Sex unknown, twin.
+                          y Triplets.
+61-62                   Rank order of the pregnancy from beginning counting all
+                          pregnancies. Direct (punch '99' if order or total
+                          number unknown) i.e. no pregnancy record.
+63                      Rank order of confinement from end (live births only).
+                            Direct--last 3 only in complete unions, i.e. those
+                            with 1 in column 29.  9 otherwise (not applicable).
+                                                                       7/15/63
+
+                                   Detailed Code
+
+                                Card for Live Birth
+
+Column No.              Item                                                                                                     Code
+64                      Number of miscarriages and stillbirths between this
+                            birth and last preceding LB or marriage in the case
+                            of the first LB
+                           0 If none of either.
+                           1 1 miscarriage.
+                           2 2 miscarriages.
+                           3 3 miscarriages.
+                           4 > 4 miscarriages.
+                           5 1 SB
+                           6 2 SB
+                           7 > 3 SB
+                           8 1 miscarriage and 1 SB.
+                           9 Combination of > 1 miscarriage and > 1 SB
+                           y If unknown.
+65-71                   Copy 46-52 from preceding LB. For 1st birth leave blank
+72                      Information about mortality of previous child.
+                          0 Known to have lived beyond 1 year.
+                          1 Known to be alive at time of survey and < 1 year
+                            old.
+
+                          If died at <1 year--calculate number of days lived
+                          (date of death minus date of birth) and code as:
+
+                          2 If < 28 days.
+                          3 28-91 days.
+                          4 92-182 days.
+                          5 183-364 days.
+                          6 Died probably less than 1 year (check when doubt)
+                          7 Died age unknown.
+                          8 Unknown outcome.
+                          9 Previous birth is twins:
+                            1 died at < 1 year and 1 lived > 1 year.
+                          Blank if card is for first birth.
+73                      Special Codes.
+                          1 No dates, but age at death is known.
+                          2 Stillbirth for which we make LB card because of
+                            twins.
+                             Summary Cards A, B, and C
+                                   General Coding
+
+Note:
+  1.  Time measurements (except for duration of marriage)-- All ages and
+      intervals refer to completed units. (midpoint x + .5)
+          Duration of marriage--number of completed years plus one.
+          (midpoint x - .5) If an interval between births is > 999 weeks, it
+          should be coded as 999.
+
+  2.  Purity Code--
+          Refers to completeness of knowledge of dates involved--poorest
+          quality in completeness code in original cards.  Order from best to
+          poorest is 1, 6, 2, 7, 3, 4, 5,-8.
+
+  3.  Card A incomplete (punched 9 in column 80) if mother's birthdate unknown
+          or if date of marriage unknown.
+
+      Card B incomplete (punched 9 in column 80) if date of marriage unknown.
+
+      Card A and B incomplete (punched 8 in column 80) if date of end of
+          marriage unknown.
+
+      Card A and B punched x if both end of marriage date and mother's birthdate
+          and /or date of marriage are unknown.  (column 80)
+
+  4.  Card C--field for duration of intervals (3 column field blank when purity
+          is 5 for either end of an interval.
+              Card A--Live Birth and Exposure Record for 1st Marriage
+                                       by Each Year of Age
+
+Columns
+1-2                     Card identification--"50"
+3-7                     Family number.
+8-14                    Date of marriage (from columns 22-28 of family card).
+15                      Purity code referring to mother's age at marriage
+                         (poorest number in completeness codes).
+16-17                   Mother's age (in years) at marriage--99 if unknown.
+18                      Purity code referring to father's age at marriage
+                         (poorest number in completeness codes).
+23-24                   Duration of marriage (in years)--99 if unknown.
+25                      Purity code referring to mother's age at end of marriage
+                          (poorest number in completeness codes).
+26-27                   Mother's age (in years) at end of marriage--99 if
+                           unknown.
+28                      Purity code referring to father's age at end of marriage
+                           (poorest number on completeness codes).
+29-30                   Father's age (in years) at end of marriage--99 if
+                           unknown.
+31-32                   Total number of confinements (LB) (from columns 44-45
+                           of family card).
+33-65                   Years of age beginning with age 18 through 50.
+
+                        0  not married.
+                        1  LB
+                        2  LB during 1st year of age in married state.
+                        3  LB during last year of age in married state.
+                        4  Pregnancy during last year of age in married
+                           state (see column 46 of family card).
+                        5  LB but date unknown due to a 5 in completeness codes
+                           for this LB. If rank order of this LB is known, all
+                           columns between the preceding LB and the following LB
+                           will be punched 5 (since it is impossible to locate
+                           the proper year).
+                        6  Only year of LB known (3 or 4 completeness codes).
+                        7  No LB during 1st year of age in married state.
+                        8  No LB or pregnancy during last year of age in married
+                           state.
+                        9  Married but no LB (used also for last year of age
+                            in married state rather than an 8 if termination
+                            is due to survey--4 in column 21).
+                        Blank--if duration of marriage is known, termination
+                            begins
+                            with 1st blank; if duration of marriage is unknown
+                            (99 in columns 23-24), marriage is unknown from this
+                            date on
+                        X overpunch in combination with either a 1, 2, 3, or
+                             6--two live births during one year of age in
+                             married state.
+66-67                   Number of weeks exposure during 1st year of age in
+                             married state.  "99" indicates dates impure.
+68-69                   Number of weeks exposure during last year of age in
+                             married state.  "99" indicates dates impure.
+70                      "1" indicates one or more multiple births involved.
+                         Blank indicates no multiple births.
+71                      Purity code referring to mother's age at birth of last
+                         child (poorest number in completeness codes).
+              Card A--Live Birth and Exposure Record for 1st Marriage
+                                       by Each Year of Age
+
+Columns
+72-73                   Mother's age (in years) at birth of last child--99 if
+                         unknown.
+74-79                   Blank
+80                      "8" indicates end of marriage unknown.
+                        "9" indicates birthdate of mother and/or date of
+                            marriage unknown.
+                        "x" indicates end of marriage plus birthdate of mother
+                            and/or date of marriage unknown.
+Any information which is obtainable will be punched into such cards.
+                  Card B--LB and Exposure Record for 1st Marriage
+                              by Duration of Marriage
+
+Columns
+1-2                     Card identification--"51"
+3-32                    Same as Card A.
+33-65                   Year of duration of marriage.  Use same code as Card A.
+66-67                   Blank.
+68-69                   Number of weeks exposure during last year of married
+                         state.
+70-73                   Same as Card A.
+74-79                   Blank.
+80                      "8" indicates end of marriage unknown.
+                        "9" indicates date of marriage unknown.
+                        "x" indicates end of marriage plus date of marriage
+                         unknown.
+Any information which is obtainable will be punched into such cards.
+               Card C--Intervals Between Successive LB's (in weeks)
+
+Columns
+1-2                     Card identification--"61" for intervals 1 to 10; "62"
+                         for intervals 11-20 (if needed).
+3-7                     Family number.
+8                       Reason for termination of marriage (column 29 of family
+                         card).
+9-10                    Age of mother (in years) at marriage.
+11-12                   Total number of confinements (LB) (columns 44-45 of
+                         family card).
+13                      Purity code referring to all intervals between
+                         successive live births (poorest number in completeness
+                         codes).
+14                      Pregnancy record.
+                          0  no record.
+                          Blank--information available from columns 59-61 of
+                             family card.
+                          "1" indicates one or more multiple births in this
+                              record.
+                          Blank indicates no multiple births in this record.
+16-21                   Blank.
+22-26                   1st interval.
+
+                          22--Purity.
+                          23--Preceding miscarriages (column 64 of LB card for
+                              1st birth)
+                          24-26--Weeks in interval (xxx if LB precedes marriage)
+27-32                   2nd interval
+
+                          27-- Mortality (column 72 of LB card for 2nd birth).
+                          28--Purity.
+                          29--Preceding miscarriages (column 64 of LB card for
+                              2nd birth).
+                          30-32--Weeks in interval.                                                               Card C--Continued
+
+Columns
+33-38                   3rd interval.
+
+                          33--Mortality (column 72 if LB card for 3rd birth).
+                          34--Purity.
+                          35--Preceding miscarriages (column 64 of LB card for
+                              3rd birth).
+                          36-38--Weeks in interval.
+39-44                   4th interval.
+
+                          39--Mortality (column 72 of LB card for 4th birth).
+                          40--Purity.
+                          41--Preceding miscarriages (column 64 of LB card for
+                              4th birth).
+                          42-44--Weeks in interval.
+45-50                   5th interval.
+
+                          45--Mortality (column 72 of LB card for 5th birth).
+                          46--Purity.
+                          47--Preceding miscarriages (column 64 of LB card for
+                              5th birth).
+                          48-50--Weeks in interval.
+                                Card C--Continued
+
+Columns
+51-56                   6th interval.
+
+                          51--Mortality (column 72 of LB card for 6th birth).
+                          52--Purity.
+                          53--Preceding miscarriages (column 64 of LB card for
+                              6th birth).
+                          54-56--Weeks in interval.
+57-62                   7th interval.
+
+                          57--Mortality (column 72 of LB card for 7th birth.
+                          58--Purity.
+                          59--Preceding miscarriages (column 64 of LB card for
+                              7th birth).
+                          60-62--Weeks of interval.
+63-68                   8th interval.
+
+                          63--Mortality (column 72 of LB card for 8th birth).
+                          64--Purity.
+                          65--Preceding miscarriages (column 64 of LB card for
+                              8th birth).
+                          66-68--Weeks in interval.
+69-74                   9th interval.
+
+                          69--Mortality (column 72 of Lb card for 9th birth).
+                          70--Purity.
+                          71--Preceding miscarriages (column 64 of LB card for
+                              9th birth).
+                          72-74--Weeks in interval.
+75-80                   10th interval.
+
+                          75--Mortality (column 72 of LB card for 10th birth).
+                          76--Purity.
+                          77--Preceding miscarriages (column 64 of LB card for
+                              10th birth).
+                          78-80--Weeks in interval.
+
+Card 62--same as card 61 but for intervals 11-20 if needed (column 21 is used
+                         here for mortality in
+11th live birth card).
+                   Card D--Length of Uncompleted Interval After
+                                   Last Live Birth Confinement
+
+Columns
+1-2                     Card identification--"60".
+3-7                     Family number.
+8-9                     Mother's age at marriage (in years)--99 unknown.
+10                      Purity code referring to mother's birth date.
+11                      Purity code referring to date of marriage.
+12                      Reason for termination of marriage.
+13-14                   Blank.
+15-16                   Order of last live birth confinement.
+17-18                   Order of last live birth confinement  1--uncompleted
+                         interval.
+19-23                   Weeks in uncompleted interval after last live birth
+                         confinement.
+24                      Purity code referring to date of last live birth
+                         confinement.
+25                      Purity code referring to date of end of marriage.
+26                      Pregnancy after last live birth.
+
+                          0  indicates there was no pregnancy.
+                          8  indicates there was a pregnancy.
+                          9  indicates there was a pregnancy.
+                          1  indicates unknown.
+Note:  Information was taken from Family Card (00).  Cards with a 6 in column
+       29--reason for termination of marriage unknown, 5 in column 30--date of
+       end of marriage unknown, 5 in column 52--date of last live birth unknown
+       were eliminated.
+
